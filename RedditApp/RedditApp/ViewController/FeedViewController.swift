@@ -41,11 +41,14 @@ class FeedViewController: UIViewController, Dismissable {
         }
     }
     
-    func dismissPost(at indexPath: IndexPath) {
-        postsArray?.remove(at: indexPath.row)
-        
-        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-        tableView.reloadData()
+    func dismissPost(_ post: Post) {
+        if let index = postsArray?.index(where: { $0 === post }) {
+            
+            let indexPath = IndexPath(row: index, section: 0)
+
+            postsArray?.remove(at: index)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }
 
@@ -64,7 +67,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let cell = cell as? FeedTableViewCell, let post = postsArray?[indexPath.row] {
             cell.delegate = self
-            cell.setupContent(with: post, and: indexPath)
+            cell.setupContent(with: post)
         }
 
         return cell

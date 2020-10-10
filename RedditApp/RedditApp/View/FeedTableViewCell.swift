@@ -9,7 +9,7 @@
 import UIKit
 
 protocol Dismissable {
-    func dismissPost(at indexPath: IndexPath)
+    func dismissPost(_ post: Post)
 }
 
 class FeedTableViewCell: UITableViewCell {
@@ -24,7 +24,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var dismissButtonLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
-    var indexPath: IndexPath?
+    var post: Post?
     var delegate: Dismissable?
     
     
@@ -53,8 +53,8 @@ class FeedTableViewCell: UITableViewCell {
         readIndicatorView.layer.cornerRadius = readIndicatorView.layer.frame.height / 2
     }
     
-    func setupContent(with post: Post, and indexPath: IndexPath) {
-        self.indexPath = indexPath
+    func setupContent(with post: Post) {
+        self.post = post
         titleLabel.text = post.title
         authorLabel.text = post.author
         entryDateLabel.text = getEntryDate(from: post.created)
@@ -84,7 +84,7 @@ class FeedTableViewCell: UITableViewCell {
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        delegate?.dismissPost(at: indexPath ?? IndexPath())
+        delegate?.dismissPost(post!)
     }
 }
 
