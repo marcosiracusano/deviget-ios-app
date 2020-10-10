@@ -9,12 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var postsArray: [Post]?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let dao = Dao()
-        dao.getPosts()
+        let service = Service()
+        
+        service.getPosts { (posts) in
+            self.postsArray = posts
+        }
     }
 
 

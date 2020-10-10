@@ -10,7 +10,7 @@ import Foundation
 
 class Dao {
     
-    func getPosts() {
+    func getPosts(DaoCompleted: @escaping (Dto) -> Void) {
         let session = URLSession.shared
         let url = URL(string: "https://www.reddit.com/top.json")!
         
@@ -23,9 +23,10 @@ class Dao {
             }
             
             do {
-                let json = try JSONDecoder().decode(Dto.self, from: data!)
+                let dto = try JSONDecoder().decode(Dto.self, from: data!)
                 
-                print(json)
+                print(dto)
+                DaoCompleted(dto)
             } catch {
                 print("Error during JSON serialization: \(error.localizedDescription)")
             }
