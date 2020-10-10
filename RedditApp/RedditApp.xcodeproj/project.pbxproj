@@ -20,6 +20,7 @@
 		EE9BD5C62532109B00A7DA55 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C52532109B00A7DA55 /* Service.swift */; };
 		EE9BD5C9253222AC00A7DA55 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C7253222AC00A7DA55 /* FeedTableViewCell.swift */; };
 		EE9BD5CA253222AC00A7DA55 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE9BD5C8253222AC00A7DA55 /* FeedTableViewCell.xib */; };
+		EE9BD5CC2532446400A7DA55 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5CB2532446400A7DA55 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		EE9BD5C52532109B00A7DA55 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		EE9BD5C7253222AC00A7DA55 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		EE9BD5C8253222AC00A7DA55 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		EE9BD5CB2532446400A7DA55 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				EE9BD59A253208ED00A7DA55 /* FeedViewController.swift */,
+				EE9BD5CB2532446400A7DA55 /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE9BD5CC2532446400A7DA55 /* DetailViewController.swift in Sources */,
 				EE9BD59B253208ED00A7DA55 /* FeedViewController.swift in Sources */,
 				EE9BD5C9253222AC00A7DA55 /* FeedTableViewCell.swift in Sources */,
 				EE9BD5C62532109B00A7DA55 /* Service.swift in Sources */,
