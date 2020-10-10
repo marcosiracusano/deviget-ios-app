@@ -37,6 +37,7 @@ class FeedViewController: UIViewController, Dismissable {
             self.postsArray = posts
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.tableView.separatorColor = .lightGray
             }
         }
     }
@@ -49,6 +50,20 @@ class FeedViewController: UIViewController, Dismissable {
             postsArray?.remove(at: index)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    @IBAction func dismissAllTapped(_ sender: Any) {
+        var indexPaths: [IndexPath] = []
+        
+        for post in postsArray ?? [] {
+            if let index = postsArray?.index(where: { $0 === post }) {
+                indexPaths.append(IndexPath(row: index, section: 0))
+            }
+        }
+
+        postsArray = []
+        tableView.separatorColor = .none
+        tableView.deleteRows(at: indexPaths, with: .fade)
     }
 }
 

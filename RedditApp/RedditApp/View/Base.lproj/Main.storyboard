@@ -16,16 +16,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vsJ-NW-bgT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="724"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaY-XP-hIV">
+                                <rect key="frame" x="0.0" y="724" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vdL-Du-gRG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Dismiss All">
+                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissAllTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o86-8b-yu6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="HaY-XP-hIV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6B5-Wc-TSr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HaY-XP-hIV" secondAttribute="trailing" id="8Ej-v6-PZ4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HaY-XP-hIV" secondAttribute="bottom" id="BeX-dn-qXQ"/>
                             <constraint firstItem="vsJ-NW-bgT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GsC-JE-zGv"/>
                             <constraint firstItem="vsJ-NW-bgT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IL8-qd-FuK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vsJ-NW-bgT" secondAttribute="bottom" id="VzX-Pd-0mf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vsJ-NW-bgT" secondAttribute="trailing" id="ZrM-LS-fVy"/>
+                            <constraint firstItem="HaY-XP-hIV" firstAttribute="top" secondItem="vsJ-NW-bgT" secondAttribute="bottom" id="xCu-ac-lrV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
