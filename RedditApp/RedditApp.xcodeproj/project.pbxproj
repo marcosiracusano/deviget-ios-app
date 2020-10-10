@@ -79,13 +79,13 @@
 		EE9BD595253208ED00A7DA55 /* RedditApp */ = {
 			isa = PBXGroup;
 			children = (
-				EE9BD596253208ED00A7DA55 /* AppDelegate.swift */,
-				EE9BD598253208ED00A7DA55 /* SceneDelegate.swift */,
-				EE9BD59A253208ED00A7DA55 /* ViewController.swift */,
-				EE9BD59C253208ED00A7DA55 /* Main.storyboard */,
-				EE9BD59F253208EF00A7DA55 /* Assets.xcassets */,
-				EE9BD5A1253208EF00A7DA55 /* LaunchScreen.storyboard */,
-				EE9BD5A4253208EF00A7DA55 /* Info.plist */,
+				EE9BD5BD25320B7700A7DA55 /* Resources */,
+				EE9BD5BA25320B5D00A7DA55 /* Main */,
+				EE9BD5BB25320B6200A7DA55 /* View */,
+				EE9BD5BC25320B6A00A7DA55 /* ViewController */,
+				EE9BD5BE25320B8100A7DA55 /* Model */,
+				EE9BD5B925320B5600A7DA55 /* Service */,
+				EE9BD5B825320B4700A7DA55 /* Dao */,
 			);
 			path = RedditApp;
 			sourceTree = "<group>";
@@ -97,6 +97,62 @@
 				EE9BD5AF253208EF00A7DA55 /* Info.plist */,
 			);
 			path = RedditAppTests;
+			sourceTree = "<group>";
+		};
+		EE9BD5B825320B4700A7DA55 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		EE9BD5B925320B5600A7DA55 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EE9BD5BA25320B5D00A7DA55 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EE9BD596253208ED00A7DA55 /* AppDelegate.swift */,
+				EE9BD598253208ED00A7DA55 /* SceneDelegate.swift */,
+				EE9BD5A4253208EF00A7DA55 /* Info.plist */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EE9BD5BB25320B6200A7DA55 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE9BD59C253208ED00A7DA55 /* Main.storyboard */,
+				EE9BD5A1253208EF00A7DA55 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE9BD5BC25320B6A00A7DA55 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE9BD59A253208ED00A7DA55 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EE9BD5BD25320B7700A7DA55 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE9BD59F253208EF00A7DA55 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE9BD5BE25320B8100A7DA55 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,7 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RedditApp/Info.plist;
+				INFOPLIST_FILE = RedditApp/Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,7 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.msiracusano.RedditApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -380,7 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RedditApp/Info.plist;
+				INFOPLIST_FILE = RedditApp/Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,7 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.msiracusano.RedditApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
