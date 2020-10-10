@@ -16,6 +16,8 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dismissButtonView: UIView!
+    @IBOutlet weak var dismissButtonImageView: UIImageView!
+    @IBOutlet weak var dismissButtonLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
     
@@ -27,11 +29,16 @@ class FeedTableViewCell: UITableViewCell {
     
     func setupView() {
         backgroundColor = .black
+        dismissButtonView.backgroundColor = .black
         
         authorLabel.textColor = .white
         entryDateLabel.textColor = .lightGray
         titleLabel.textColor = .white
+        dismissButtonLabel.textColor = .white
         commentsLabel.textColor = .orange
+        
+        dismissButtonImageView.image = dismissButtonImageView.image?.withRenderingMode(.alwaysTemplate)
+        dismissButtonImageView.tintColor = .orange
         
         readIndicatorView.layer.cornerRadius = readIndicatorView.layer.frame.height / 2
     }

@@ -67,10 +67,38 @@
                             <constraint firstAttribute="height" constant="20" id="MkR-ft-Ze5"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLi-3R-8I6">
+                        <rect key="frame" x="10" y="127" width="148" height="43"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dismissIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RPh-0h-YuJ">
+                                <rect key="frame" x="10" y="11.5" width="20" height="20.000000000000227"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="HJE-1d-6ag"/>
+                                    <constraint firstAttribute="height" constant="20" id="RcE-i2-o33"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dismiss Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBo-a7-PAK">
+                                <rect key="frame" x="40" y="11" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RPh-0h-YuJ" firstAttribute="centerY" secondItem="iLi-3R-8I6" secondAttribute="centerY" id="FR9-Wa-fcw"/>
+                            <constraint firstItem="kBo-a7-PAK" firstAttribute="centerY" secondItem="iLi-3R-8I6" secondAttribute="centerY" id="L3M-yo-Dvn"/>
+                            <constraint firstAttribute="trailing" secondItem="kBo-a7-PAK" secondAttribute="trailing" constant="10" id="VjK-sV-UJ9"/>
+                            <constraint firstItem="kBo-a7-PAK" firstAttribute="leading" secondItem="RPh-0h-YuJ" secondAttribute="trailing" constant="10" id="kta-w1-3DW"/>
+                            <constraint firstItem="RPh-0h-YuJ" firstAttribute="leading" secondItem="iLi-3R-8I6" secondAttribute="leading" constant="10" id="tp1-rY-y6a"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="iLi-3R-8I6" secondAttribute="bottom" constant="10" id="1Yu-oW-mIX"/>
                     <constraint firstItem="fgQ-2L-c2r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="5AF-Eh-YQY"/>
                     <constraint firstItem="kqU-4H-ZLj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="7Mx-hk-hnf"/>
+                    <constraint firstItem="iLi-3R-8I6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="9Df-xP-VBu"/>
                     <constraint firstItem="kqU-4H-ZLj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="E2C-zl-mBo"/>
                     <constraint firstItem="fgQ-2L-c2r" firstAttribute="top" secondItem="NF2-GC-zKs" secondAttribute="bottom" constant="10" id="EbO-mP-W58"/>
                     <constraint firstItem="z9S-ZH-LV7" firstAttribute="leading" secondItem="fgQ-2L-c2r" secondAttribute="trailing" constant="10" id="FwZ-ED-AFZ"/>
@@ -78,6 +106,7 @@
                     <constraint firstItem="NF2-GC-zKs" firstAttribute="leading" secondItem="kqU-4H-ZLj" secondAttribute="trailing" constant="10" id="Kwk-XX-p77"/>
                     <constraint firstItem="z9S-ZH-LV7" firstAttribute="centerY" secondItem="fgQ-2L-c2r" secondAttribute="centerY" id="NHo-9m-Zwo"/>
                     <constraint firstAttribute="bottomMargin" secondItem="slF-Te-kqI" secondAttribute="bottom" constant="10" id="O5m-dd-oLI"/>
+                    <constraint firstItem="iLi-3R-8I6" firstAttribute="centerY" secondItem="slF-Te-kqI" secondAttribute="centerY" id="RnV-w8-nLz"/>
                     <constraint firstItem="nKb-Hv-ivf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="Un3-15-9Pi"/>
                     <constraint firstItem="nKb-Hv-ivf" firstAttribute="leading" secondItem="z9S-ZH-LV7" secondAttribute="trailing" constant="10" id="djZ-6s-aWg"/>
                     <constraint firstAttribute="trailingMargin" secondItem="slF-Te-kqI" secondAttribute="trailing" constant="20" id="g2g-hu-Bqu"/>
@@ -91,6 +120,9 @@
             <connections>
                 <outlet property="authorLabel" destination="NF2-GC-zKs" id="wb3-Qi-Ero"/>
                 <outlet property="commentsLabel" destination="slF-Te-kqI" id="jKB-5e-dcC"/>
+                <outlet property="dismissButtonImageView" destination="RPh-0h-YuJ" id="1Og-48-hbQ"/>
+                <outlet property="dismissButtonLabel" destination="kBo-a7-PAK" id="fE9-6S-Zf7"/>
+                <outlet property="dismissButtonView" destination="iLi-3R-8I6" id="eh4-KO-FOd"/>
                 <outlet property="entryDateLabel" destination="MIx-qh-BsO" id="JhQ-dx-miq"/>
                 <outlet property="readIndicatorView" destination="kqU-4H-ZLj" id="WAx-3q-giu"/>
                 <outlet property="thumbnailImageView" destination="fgQ-2L-c2r" id="Etb-QP-A4a"/>
@@ -101,5 +133,6 @@
     </objects>
     <resources>
         <image name="disclosureIndicatorImage" width="32" height="32"/>
+        <image name="dismissIcon" width="980" height="982"/>
     </resources>
 </document>
