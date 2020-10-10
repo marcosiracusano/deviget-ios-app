@@ -42,6 +42,10 @@ class FeedTableViewCell: UITableViewCell {
         entryDateLabel.text = getEntryDate(from: post.created)
         commentsLabel.text = "\(post.numberOfComments) comments"
         
+        if let url = URL(string: post.thumbnail) {
+            thumbnailImageView.load(url: url)
+        }
+
     }
     
     func getEntryDate(from epoch: Double) -> String {
@@ -59,5 +63,20 @@ class FeedTableViewCell: UITableViewCell {
         }
         
         return "\(formatter.string(from: date)) hours ago"
+    }
+}
+
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
     }
 }
