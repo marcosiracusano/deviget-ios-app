@@ -11,7 +11,7 @@ import Foundation
 class Post: Codable {
     let title: String
     let author: String
-    let created: Int
+    let created: Double
     let thumbnail: String
     let numberOfComments: Int
     var unread: Bool = true
@@ -21,7 +21,7 @@ class Post: Codable {
         case numberOfComments = "num_comments"
     }
 
-    init(title: String, author: String, created: Int, thumbnail: String, numberOfComments: Int) {
+    init(title: String, author: String, created: Double, thumbnail: String, numberOfComments: Int) {
         self.title = title
         self.author = author
         self.created = created

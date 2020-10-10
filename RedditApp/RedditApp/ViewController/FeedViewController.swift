@@ -18,6 +18,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Reddit Posts"
         setupTableView()
         callToServices()
     }
@@ -47,11 +48,15 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         return postsArray?.count ?? 0
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath)
         
         if let cell = cell as? FeedTableViewCell, let post = postsArray?[indexPath.row] {
-            cell.setup(with: post)
+            cell.setupContent(with: post)
         }
 
         return cell
