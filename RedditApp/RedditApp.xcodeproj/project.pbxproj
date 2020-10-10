@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE9BD597253208ED00A7DA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD596253208ED00A7DA55 /* AppDelegate.swift */; };
 		EE9BD599253208ED00A7DA55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD598253208ED00A7DA55 /* SceneDelegate.swift */; };
-		EE9BD59B253208ED00A7DA55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD59A253208ED00A7DA55 /* ViewController.swift */; };
+		EE9BD59B253208ED00A7DA55 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD59A253208ED00A7DA55 /* FeedViewController.swift */; };
 		EE9BD59E253208ED00A7DA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9BD59C253208ED00A7DA55 /* Main.storyboard */; };
 		EE9BD5A0253208EF00A7DA55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE9BD59F253208EF00A7DA55 /* Assets.xcassets */; };
 		EE9BD5A3253208EF00A7DA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9BD5A1253208EF00A7DA55 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,8 @@
 		EE9BD5C225320FC500A7DA55 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C125320FC500A7DA55 /* Post.swift */; };
 		EE9BD5C42532108500A7DA55 /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C32532108500A7DA55 /* Dao.swift */; };
 		EE9BD5C62532109B00A7DA55 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C52532109B00A7DA55 /* Service.swift */; };
+		EE9BD5C9253222AC00A7DA55 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C7253222AC00A7DA55 /* FeedTableViewCell.swift */; };
+		EE9BD5CA253222AC00A7DA55 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE9BD5C8253222AC00A7DA55 /* FeedTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +36,7 @@
 		EE9BD593253208ED00A7DA55 /* RedditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9BD596253208ED00A7DA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE9BD598253208ED00A7DA55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE9BD59A253208ED00A7DA55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE9BD59A253208ED00A7DA55 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		EE9BD59D253208ED00A7DA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE9BD59F253208EF00A7DA55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE9BD5A2253208EF00A7DA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		EE9BD5C125320FC500A7DA55 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		EE9BD5C32532108500A7DA55 /* Dao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dao.swift; sourceTree = "<group>"; };
 		EE9BD5C52532109B00A7DA55 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		EE9BD5C7253222AC00A7DA55 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		EE9BD5C8253222AC00A7DA55 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 			children = (
 				EE9BD59C253208ED00A7DA55 /* Main.storyboard */,
 				EE9BD5A1253208EF00A7DA55 /* LaunchScreen.storyboard */,
+				EE9BD5C7253222AC00A7DA55 /* FeedTableViewCell.swift */,
+				EE9BD5C8253222AC00A7DA55 /* FeedTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -145,7 +151,7 @@
 		EE9BD5BC25320B6A00A7DA55 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EE9BD59A253208ED00A7DA55 /* ViewController.swift */,
+				EE9BD59A253208ED00A7DA55 /* FeedViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE9BD5A3253208EF00A7DA55 /* LaunchScreen.storyboard in Resources */,
+				EE9BD5CA253222AC00A7DA55 /* FeedTableViewCell.xib in Resources */,
 				EE9BD5A0253208EF00A7DA55 /* Assets.xcassets in Resources */,
 				EE9BD59E253208ED00A7DA55 /* Main.storyboard in Resources */,
 			);
@@ -268,7 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9BD59B253208ED00A7DA55 /* ViewController.swift in Sources */,
+				EE9BD59B253208ED00A7DA55 /* FeedViewController.swift in Sources */,
+				EE9BD5C9253222AC00A7DA55 /* FeedTableViewCell.swift in Sources */,
 				EE9BD5C62532109B00A7DA55 /* Service.swift in Sources */,
 				EE9BD597253208ED00A7DA55 /* AppDelegate.swift in Sources */,
 				EE9BD5C42532108500A7DA55 /* Dao.swift in Sources */,
