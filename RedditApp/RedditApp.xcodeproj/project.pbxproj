@@ -16,6 +16,8 @@
 		EE9BD5AE253208EF00A7DA55 /* RedditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5AD253208EF00A7DA55 /* RedditAppTests.swift */; };
 		EE9BD5C025320E8400A7DA55 /* Dto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5BF25320E8400A7DA55 /* Dto.swift */; };
 		EE9BD5C225320FC500A7DA55 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C125320FC500A7DA55 /* Post.swift */; };
+		EE9BD5C42532108500A7DA55 /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C32532108500A7DA55 /* Dao.swift */; };
+		EE9BD5C62532109B00A7DA55 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C52532109B00A7DA55 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		EE9BD5AF253208EF00A7DA55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE9BD5BF25320E8400A7DA55 /* Dto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dto.swift; sourceTree = "<group>"; };
 		EE9BD5C125320FC500A7DA55 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		EE9BD5C32532108500A7DA55 /* Dao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dao.swift; sourceTree = "<group>"; };
+		EE9BD5C52532109B00A7DA55 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		EE9BD5B825320B4700A7DA55 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
+				EE9BD5C32532108500A7DA55 /* Dao.swift */,
 			);
 			path = Dao;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 		EE9BD5B925320B5600A7DA55 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EE9BD5C52532109B00A7DA55 /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE9BD59B253208ED00A7DA55 /* ViewController.swift in Sources */,
+				EE9BD5C62532109B00A7DA55 /* Service.swift in Sources */,
 				EE9BD597253208ED00A7DA55 /* AppDelegate.swift in Sources */,
+				EE9BD5C42532108500A7DA55 /* Dao.swift in Sources */,
 				EE9BD599253208ED00A7DA55 /* SceneDelegate.swift in Sources */,
 				EE9BD5C025320E8400A7DA55 /* Dto.swift in Sources */,
 				EE9BD5C225320FC500A7DA55 /* Post.swift in Sources */,
