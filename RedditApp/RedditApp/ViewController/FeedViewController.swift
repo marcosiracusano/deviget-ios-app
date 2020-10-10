@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, Dismissable {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -40,6 +40,13 @@ class FeedViewController: UIViewController {
             }
         }
     }
+    
+    func dismissPost(at indexPath: IndexPath) {
+        postsArray?.remove(at: indexPath.row)
+        
+        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        tableView.reloadData()
+    }
 }
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
@@ -56,7 +63,8 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath)
         
         if let cell = cell as? FeedTableViewCell, let post = postsArray?[indexPath.row] {
-            cell.setupContent(with: post)
+            cell.delegate = self
+            cell.setupContent(with: post, and: indexPath)
         }
 
         return cell

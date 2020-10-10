@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol Dismissable {
+    func dismissPost(at indexPath: IndexPath)
+}
+
 class FeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var readIndicatorView: UIView!
@@ -20,10 +24,16 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var dismissButtonLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
+    var indexPath: IndexPath?
+    var delegate: Dismissable?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        dismissButtonView.addGestureRecognizer(tap)
     }
  
     
@@ -43,7 +53,8 @@ class FeedTableViewCell: UITableViewCell {
         readIndicatorView.layer.cornerRadius = readIndicatorView.layer.frame.height / 2
     }
     
-    func setupContent(with post: Post) {
+    func setupContent(with post: Post, and indexPath: IndexPath) {
+        self.indexPath = indexPath
         titleLabel.text = post.title
         authorLabel.text = post.author
         entryDateLabel.text = getEntryDate(from: post.created)
@@ -70,6 +81,10 @@ class FeedTableViewCell: UITableViewCell {
         }
         
         return "\(formatter.string(from: date)) hours ago"
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        delegate?.dismissPost(at: indexPath ?? IndexPath())
     }
 }
 
