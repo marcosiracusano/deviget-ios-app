@@ -35,6 +35,12 @@ class FeedTableViewCell: UITableViewCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         dismissButtonView.addGestureRecognizer(tap)
     }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        if selected {
+            readIndicatorView.backgroundColor = .none
+        }
+    }
  
     
     func setupView() {
