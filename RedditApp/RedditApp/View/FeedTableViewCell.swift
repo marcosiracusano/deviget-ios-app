@@ -44,7 +44,6 @@ class FeedTableViewCell: UITableViewCell {
  
     
     func setupView() {
-
         dismissButtonImageView.image = dismissButtonImageView.image?.withRenderingMode(.alwaysTemplate)
         dismissButtonImageView.tintColor = UIColor(red: 235/255, green: 85/255, blue: 40/255, alpha: 1)
         
@@ -58,10 +57,13 @@ class FeedTableViewCell: UITableViewCell {
         entryDateLabel.text = getEntryDate(from: post.created)
         commentsLabel.text = "\(post.numberOfComments) comments"
         
-        if let url = URL(string: post.thumbnail) {
+        if let url = URL(string: post.thumbnail), UIApplication.shared.canOpenURL(url) {
             thumbnailImageView.load(url: url)
+        } else {
+            thumbnailImageView.image = UIImage(named: "imagePlaceholder")
+            thumbnailImageView.image = thumbnailImageView.image?.withRenderingMode(.alwaysTemplate)
+            thumbnailImageView.tintColor = UIColor(red: 235/255, green: 85/255, blue: 40/255, alpha: 1)
         }
-
     }
     
     func getEntryDate(from epoch: Double) -> String {

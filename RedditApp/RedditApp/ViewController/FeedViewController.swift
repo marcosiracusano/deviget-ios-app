@@ -12,6 +12,8 @@ class FeedViewController: UIViewController, Dismissable {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var redditLogoImageView: UIImageView!
+    @IBOutlet weak var pullToRefreshLabel: UILabel!
+    @IBOutlet weak var dismissAllButton: UIButton!
     
     private let refreshControl = UIRefreshControl()
     
@@ -43,9 +45,11 @@ class FeedViewController: UIViewController, Dismissable {
         service.getPosts { (posts) in
             self.postsArray = posts
             DispatchQueue.main.async {
-                self.redditLogoImageView.isHidden = true
                 self.tableView.reloadData()
                 self.tableView.separatorStyle = .singleLine
+                
+                self.dismissAllButton.isHidden = false
+                self.pullToRefreshLabel.isHidden = false
                 self.redditLogoImageView.isHidden = true
             }
         }
@@ -78,6 +82,7 @@ class FeedViewController: UIViewController, Dismissable {
         postsArray = []
         tableView.separatorStyle = .none
         redditLogoImageView.isHidden = false
+        dismissAllButton.isHidden = true
         tableView.deleteRows(at: indexPaths, with: .fade)
     }
 }

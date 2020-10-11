@@ -27,8 +27,12 @@ class DetailViewController: UIViewController {
         authorLabel.text = post?.author
         postContentLabel.text = post?.title
         
-        if let post = self.post, let url = URL(string: post.thumbnail) {
+        if let post = post, let url = URL(string: post.thumbnail), UIApplication.shared.canOpenURL(url) {
             thumbnailImageView.load(url: url)
+        } else {
+            thumbnailImageView.image = UIImage(named: "imagePlaceholder")
+            thumbnailImageView.image = thumbnailImageView.image?.withRenderingMode(.alwaysTemplate)
+            thumbnailImageView.tintColor = UIColor(red: 235/255, green: 85/255, blue: 40/255, alpha: 1)
         }
     }
 }
