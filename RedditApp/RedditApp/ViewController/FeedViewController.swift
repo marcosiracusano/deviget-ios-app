@@ -35,7 +35,7 @@ class FeedViewController: UIViewController, Dismissable {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "FeedTableViewCell", bundle: Bundle.init(for: FeedTableViewCell.self)), forCellReuseIdentifier: "FeedTableViewCell")
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = getSpinner()
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         refreshControl.tintColor = .orange
@@ -50,9 +50,10 @@ class FeedViewController: UIViewController, Dismissable {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.separatorStyle = .singleLine
+                self.tableView.tableFooterView = self.getSpinner()
                 
+                self.pullToRefreshLabel.isHidden = true
                 self.dismissAllButton.isHidden = false
-                self.pullToRefreshLabel.isHidden = false
                 self.redditLogoImageView.isHidden = true
             }
         }
@@ -86,6 +87,22 @@ class FeedViewController: UIViewController, Dismissable {
         }
     }
     
+    func getSpinner() -> UIView {
+        let viewWidth = self.view.bounds.size.width
+        let spinnerView = UIView.init(frame: CGRect(x: 0, y: 0, width: Int(viewWidth), height: 30))
+        spinnerView.backgroundColor = .black
+        let ai = UIActivityIndicatorView.init(style: .medium)
+        ai.color = UIColor(red: 235/255, green: 85/255, blue: 40/255, alpha: 1)
+        ai.startAnimating()
+        ai.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(ai)
+        }
+        
+        return spinnerView
+    }
+    
     @IBAction func dismissAllTapped(_ sender: Any) {
         var indexPaths: [IndexPath] = []
         
@@ -96,10 +113,12 @@ class FeedViewController: UIViewController, Dismissable {
         }
 
         postsArray = []
-        tableView.separatorStyle = .none
+        pullToRefreshLabel.isHidden = false
         redditLogoImageView.isHidden = false
         dismissAllButton.isHidden = true
         tableView.deleteRows(at: indexPaths, with: .fade)
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
     }
 }
 
