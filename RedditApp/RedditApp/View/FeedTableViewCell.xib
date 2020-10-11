@@ -16,11 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9S-ZH-LV7">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="z9S-ZH-LV7">
                         <rect key="frame" x="100" y="41" width="274" height="80"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="80" id="aeb-rX-Trn"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -106,6 +103,7 @@
                     <constraint firstItem="nKb-Hv-ivf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ktl-zq-DL0"/>
                     <constraint firstItem="NF2-GC-zKs" firstAttribute="leading" secondItem="kqU-4H-ZLj" secondAttribute="trailing" constant="10" id="Kwk-XX-p77"/>
                     <constraint firstItem="z9S-ZH-LV7" firstAttribute="centerY" secondItem="fgQ-2L-c2r" secondAttribute="centerY" id="NHo-9m-Zwo"/>
+                    <constraint firstItem="slF-Te-kqI" firstAttribute="top" secondItem="z9S-ZH-LV7" secondAttribute="bottom" constant="17" id="NyF-aO-hrU"/>
                     <constraint firstAttribute="bottomMargin" secondItem="slF-Te-kqI" secondAttribute="bottom" constant="10" id="O5m-dd-oLI"/>
                     <constraint firstItem="iLi-3R-8I6" firstAttribute="centerY" secondItem="slF-Te-kqI" secondAttribute="centerY" id="RnV-w8-nLz"/>
                     <constraint firstItem="nKb-Hv-ivf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="Un3-15-9Pi"/>
