@@ -102,6 +102,16 @@
                                     <constraint firstAttribute="width" constant="150" id="Vlw-fJ-8zX"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-6W-p4s">
+                                <rect key="frame" x="132" y="105" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="CRV-il-94f"/>
+                                    <constraint firstAttribute="width" constant="150" id="sKG-TA-4SL"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="tap:" destination="71J-lY-5an" eventType="touchUpInside" id="2dp-3H-Qx6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -111,10 +121,12 @@
                             <constraint firstItem="dCb-D5-HKp" firstAttribute="trailing" secondItem="cue-Xf-bPp" secondAttribute="trailing" constant="20" id="D8m-Cv-Geb"/>
                             <constraint firstItem="cue-Xf-bPp" firstAttribute="top" secondItem="dCb-D5-HKp" secondAttribute="top" constant="20" id="J1N-oT-Ujb"/>
                             <constraint firstItem="dCb-D5-HKp" firstAttribute="trailing" secondItem="8wW-Tw-KTw" secondAttribute="trailing" constant="20" id="JeM-wd-02g"/>
+                            <constraint firstItem="B8k-6W-p4s" firstAttribute="centerX" secondItem="tpw-AL-ECG" secondAttribute="centerX" id="cGZ-nO-aEc"/>
                             <constraint firstItem="dCb-D5-HKp" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8wW-Tw-KTw" secondAttribute="bottom" constant="20" id="dGZ-1f-xGq"/>
                             <constraint firstItem="8wW-Tw-KTw" firstAttribute="centerX" secondItem="dCb-D5-HKp" secondAttribute="centerX" id="gig-hw-RAg"/>
                             <constraint firstItem="8wW-Tw-KTw" firstAttribute="top" secondItem="tpw-AL-ECG" secondAttribute="bottom" constant="20" id="hVW-UX-xCU"/>
                             <constraint firstItem="tpw-AL-ECG" firstAttribute="top" secondItem="cue-Xf-bPp" secondAttribute="bottom" constant="20" id="i0O-cp-8y9"/>
+                            <constraint firstItem="B8k-6W-p4s" firstAttribute="centerY" secondItem="tpw-AL-ECG" secondAttribute="centerY" id="lro-HM-DlW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dCb-D5-HKp"/>
                     </view>
@@ -126,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CD7-H3-TuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1978" y="177"/>
+            <point key="canvasLocation" x="1976.8115942028987" y="176.78571428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iIu-ZG-COo">
