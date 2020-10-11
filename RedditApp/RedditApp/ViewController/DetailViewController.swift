@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
         postContentLabel.text = post?.title ?? ""
         textLabel.text = post?.selftext ?? ""
         
-        if let post = post, let url = URL(string: post.thumbnail), UIApplication.shared.canOpenURL(url) {
+        if let post = post, let url = URL(string: post.thumbnail ?? ""), UIApplication.shared.canOpenURL(url) {
             thumbnailImageView.load(url: url)
         } else {
             hasImage = false

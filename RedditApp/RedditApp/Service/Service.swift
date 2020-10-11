@@ -16,15 +16,15 @@ class Service {
         
         dao.getPosts(params: params) { (dto) in
             
-            let after = dto.data.after
-            let children = dto.data.children
+            let after = dto.data?.after
+            let children = dto.data?.children
             var posts: [Post] = []
             
-            for child in children {
-                child.data.after = after
-                let post = child.data
-                
-                posts.append(post)
+            for child in children ?? [] {
+                child.data?.after = after
+                if let post = child.data {
+                    posts.append(post)
+                }
             }
             
             ServiceCompleted(posts)

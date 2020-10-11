@@ -54,10 +54,10 @@ class FeedTableViewCell: UITableViewCell {
         self.post = post
         titleLabel.text = post.title
         authorLabel.text = post.author
-        entryDateLabel.text = getEntryDate(from: post.created)
-        commentsLabel.text = "\(post.numberOfComments) comments"
+        entryDateLabel.text = getEntryDate(from: post.created ?? 0)
+        commentsLabel.text = "\(post.numberOfComments ?? 0) comments"
         
-        if let url = URL(string: post.thumbnail), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: post.thumbnail ?? ""), UIApplication.shared.canOpenURL(url) {
             thumbnailImageView.load(url: url)
         } else {
             thumbnailImageView.image = UIImage(named: "imagePlaceholder")

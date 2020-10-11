@@ -9,12 +9,12 @@
 import Foundation
 
 class Post: Codable {
-    let title: String
-    let selftext: String
-    let author: String
-    let created: Double
-    let thumbnail: String
-    let numberOfComments: Int
+    let title: String?
+    let selftext: String?
+    let author: String?
+    let created: Double?
+    let thumbnail: String?
+    let numberOfComments: Int?
     var unread: Bool = true
     var after: String? = nil
     
@@ -23,7 +23,7 @@ class Post: Codable {
         case numberOfComments = "num_comments"
     }
 
-    init(title: String, selftext: String, author: String, created: Double, thumbnail: String, numberOfComments: Int) {
+    init(title: String?, selftext: String?, author: String?, created: Double?, thumbnail: String?, numberOfComments: Int?) {
         self.title = title
         self.selftext = selftext
         self.author = author

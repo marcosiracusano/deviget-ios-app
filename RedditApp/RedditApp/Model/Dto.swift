@@ -9,29 +9,29 @@
 import Foundation
 
 class Dto: Codable {
-    let kind: String
-    let data: DtoData
+    let kind: String?
+    let data: DtoData?
     
     enum CodingKeys: String, CodingKey {
         case kind, data
     }
 
-    init(kind: String, data: DtoData) {
+    init(kind: String?, data: DtoData?) {
         self.kind = kind
         self.data = data
     }
 }
 
 class DtoData: Codable {
-    let modhash: String
-    let children: [DtoChild]
-    let after: String
+    let modhash: String?
+    let children: [DtoChild]?
+    let after: String?
     
     enum CodingKeys: String, CodingKey {
         case modhash, children, after
     }
 
-    init(modhash: String, children: [DtoChild], after: String) {
+    init(modhash: String?, children: [DtoChild]?, after: String?) {
         self.modhash = modhash
         self.children = children
         self.after = after
@@ -39,14 +39,14 @@ class DtoData: Codable {
 }
 
 class DtoChild: Codable {
-    let kind: String
-    let data: Post
+    let kind: String?
+    let data: Post?
     
     enum CodingKeys: String, CodingKey {
         case kind, data
     }
 
-    init(kind: String, data: Post) {
+    init(kind: String?, data: Post?) {
         self.kind = kind
         self.data = data
     }
