@@ -13,7 +13,7 @@
 		EE9BD59E253208ED00A7DA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9BD59C253208ED00A7DA55 /* Main.storyboard */; };
 		EE9BD5A0253208EF00A7DA55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE9BD59F253208EF00A7DA55 /* Assets.xcassets */; };
 		EE9BD5A3253208EF00A7DA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9BD5A1253208EF00A7DA55 /* LaunchScreen.storyboard */; };
-		EE9BD5AE253208EF00A7DA55 /* RedditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5AD253208EF00A7DA55 /* RedditAppTests.swift */; };
+		EE9BD5AE253208EF00A7DA55 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5AD253208EF00A7DA55 /* FeedViewControllerTests.swift */; };
 		EE9BD5C025320E8400A7DA55 /* Dto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5BF25320E8400A7DA55 /* Dto.swift */; };
 		EE9BD5C225320FC500A7DA55 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C125320FC500A7DA55 /* Post.swift */; };
 		EE9BD5C42532108500A7DA55 /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5C32532108500A7DA55 /* Dao.swift */; };
@@ -26,6 +26,7 @@
 		EE9BD5D22532C60600A7DA55 /* DtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5D12532C60600A7DA55 /* DtoTests.swift */; };
 		EE9BD5D42532C62100A7DA55 /* DtoDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5D32532C62100A7DA55 /* DtoDataTests.swift */; };
 		EE9BD5D62532C63000A7DA55 /* DtoChildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5D52532C63000A7DA55 /* DtoChildTests.swift */; };
+		EE9BD5DB2533666D00A7DA55 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9BD5DA2533666D00A7DA55 /* DetailViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,7 @@
 		EE9BD5A2253208EF00A7DA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE9BD5A4253208EF00A7DA55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE9BD5A9253208EF00A7DA55 /* RedditAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE9BD5AD253208EF00A7DA55 /* RedditAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditAppTests.swift; sourceTree = "<group>"; };
+		EE9BD5AD253208EF00A7DA55 /* FeedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTests.swift; sourceTree = "<group>"; };
 		EE9BD5AF253208EF00A7DA55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE9BD5BF25320E8400A7DA55 /* Dto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dto.swift; sourceTree = "<group>"; };
 		EE9BD5C125320FC500A7DA55 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		EE9BD5D12532C60600A7DA55 /* DtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoTests.swift; sourceTree = "<group>"; };
 		EE9BD5D32532C62100A7DA55 /* DtoDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoDataTests.swift; sourceTree = "<group>"; };
 		EE9BD5D52532C63000A7DA55 /* DtoChildTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoChildTests.swift; sourceTree = "<group>"; };
+		EE9BD5DA2533666D00A7DA55 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +119,8 @@
 		EE9BD5AC253208EF00A7DA55 /* RedditAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				EE9BD5DC2533667800A7DA55 /* ViewController */,
 				EE9BD5D72532C84300A7DA55 /* Model */,
-				EE9BD5AD253208EF00A7DA55 /* RedditAppTests.swift */,
 				EE9BD5AF253208EF00A7DA55 /* Info.plist */,
 				EE9BD5CD2532BE9100A7DA55 /* Mock.swift */,
 			);
@@ -197,6 +199,15 @@
 				EE9BD5D52532C63000A7DA55 /* DtoChildTests.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EE9BD5DC2533667800A7DA55 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE9BD5AD253208EF00A7DA55 /* FeedViewControllerTests.swift */,
+				EE9BD5DA2533666D00A7DA55 /* DetailViewControllerTests.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,12 +328,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9BD5AE253208EF00A7DA55 /* RedditAppTests.swift in Sources */,
+				EE9BD5AE253208EF00A7DA55 /* FeedViewControllerTests.swift in Sources */,
 				EE9BD5CE2532BE9100A7DA55 /* Mock.swift in Sources */,
 				EE9BD5D62532C63000A7DA55 /* DtoChildTests.swift in Sources */,
 				EE9BD5D42532C62100A7DA55 /* DtoDataTests.swift in Sources */,
 				EE9BD5D02532C0CF00A7DA55 /* PostTests.swift in Sources */,
 				EE9BD5D22532C60600A7DA55 /* DtoTests.swift in Sources */,
+				EE9BD5DB2533666D00A7DA55 /* DetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

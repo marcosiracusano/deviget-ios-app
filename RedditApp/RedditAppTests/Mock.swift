@@ -60,4 +60,10 @@ class Mock {
         
         return emptyPost
     }
+    
+    func getPostsArray() -> [Post] {
+        let postsArray = [getPost(), getPost(), getPost(), getPost(), getPost()]
+        
+        return postsArray
+    }
 }
