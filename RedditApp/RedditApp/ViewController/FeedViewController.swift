@@ -18,6 +18,8 @@ class FeedViewController: UIViewController, Dismissable {
     private let refreshControl = UIRefreshControl()
     
     var postsArray: [Post]?
+    var params: String?
+    var index: Int = 0
     
 
     override func viewDidLoad() {
@@ -25,7 +27,7 @@ class FeedViewController: UIViewController, Dismissable {
 
         navigationItem.title = "Reddit Posts"
         setupTableView()
-        callToServices(nil)
+        callToServices()
     }
 
 
@@ -39,11 +41,12 @@ class FeedViewController: UIViewController, Dismissable {
         refreshControl.tintColor = .orange
     }
     
-    func callToServices(_ params: String?) {
+    func callToServices() {
         let service = Service()
         
-        service.getPosts(params: params) { (posts) in
+        service.getPosts(params: nil) { (posts) in
             self.postsArray = posts
+            self.params = posts.first?.after
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.separatorStyle = .singleLine
@@ -56,7 +59,7 @@ class FeedViewController: UIViewController, Dismissable {
     }
     
     @objc private func refreshData(_ sender: Any) {
-        callToServices(nil)
+        callToServices()
         refreshControl.endRefreshing()
     }
     
@@ -67,6 +70,19 @@ class FeedViewController: UIViewController, Dismissable {
 
             postsArray?.remove(at: index)
             tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func getNewPosts(with indexPath: IndexPath, params: String?) {
+        index = indexPath.row
+        let service = Service()
+        
+        service.getPosts(params: params) { (posts) in
+            self.postsArray?.append(contentsOf: posts)
+            self.params = posts.first?.after
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -114,6 +130,16 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             nextVC.post = postsArray?[indexPath.row]
             
             navigationController?.pushViewController(nextVC, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == ((postsArray?.count ?? 0) - 1) && indexPath.row != index {
+            if !(params?.isEmpty ?? true) {
+                getNewPosts(with: indexPath, params: params)
+            } else {
+                tableView.tableFooterView = UIView()
+            }
         }
     }
 }

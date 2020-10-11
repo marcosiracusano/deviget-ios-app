@@ -16,6 +16,7 @@ class Post: Codable {
     let thumbnail: String
     let numberOfComments: Int
     var unread: Bool = true
+    var after: String? = nil
     
     enum CodingKeys: String, CodingKey {
         case title, selftext, author, created, thumbnail
