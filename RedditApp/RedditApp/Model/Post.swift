@@ -10,6 +10,7 @@ import Foundation
 
 class Post: Codable {
     let title: String
+    let selftext: String
     let author: String
     let created: Double
     let thumbnail: String
@@ -17,12 +18,13 @@ class Post: Codable {
     var unread: Bool = true
     
     enum CodingKeys: String, CodingKey {
-        case title, author, created, thumbnail
+        case title, selftext, author, created, thumbnail
         case numberOfComments = "num_comments"
     }
 
-    init(title: String, author: String, created: Double, thumbnail: String, numberOfComments: Int) {
+    init(title: String, selftext: String, author: String, created: Double, thumbnail: String, numberOfComments: Int) {
         self.title = title
+        self.selftext = selftext
         self.author = author
         self.created = created
         self.thumbnail = thumbnail

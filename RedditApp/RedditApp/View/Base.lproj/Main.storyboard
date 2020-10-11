@@ -89,9 +89,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wW-Tw-KTw">
-                                <rect key="frame" x="20" y="275" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wW-Tw-KTw">
+                                <rect key="frame" x="20" y="275" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -112,27 +112,38 @@
                                     <action selector="tap:" destination="71J-lY-5an" eventType="touchUpInside" id="2dp-3H-Qx6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNT-0E-XrP">
+                                <rect key="frame" x="20" y="329" width="374" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8wW-Tw-KTw" firstAttribute="leading" secondItem="dCb-D5-HKp" secondAttribute="leading" constant="20" id="0sp-cu-d1F"/>
                             <constraint firstItem="tpw-AL-ECG" firstAttribute="centerX" secondItem="dCb-D5-HKp" secondAttribute="centerX" id="1n2-MG-plZ"/>
                             <constraint firstItem="cue-Xf-bPp" firstAttribute="leading" secondItem="dCb-D5-HKp" secondAttribute="leading" constant="20" id="8nB-cZ-dfB"/>
+                            <constraint firstItem="dCb-D5-HKp" firstAttribute="trailing" secondItem="wNT-0E-XrP" secondAttribute="trailing" constant="20" id="BzA-cO-fYJ"/>
                             <constraint firstItem="dCb-D5-HKp" firstAttribute="trailing" secondItem="cue-Xf-bPp" secondAttribute="trailing" constant="20" id="D8m-Cv-Geb"/>
                             <constraint firstItem="cue-Xf-bPp" firstAttribute="top" secondItem="dCb-D5-HKp" secondAttribute="top" constant="20" id="J1N-oT-Ujb"/>
                             <constraint firstItem="dCb-D5-HKp" firstAttribute="trailing" secondItem="8wW-Tw-KTw" secondAttribute="trailing" constant="20" id="JeM-wd-02g"/>
+                            <constraint firstItem="dCb-D5-HKp" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wNT-0E-XrP" secondAttribute="bottom" constant="20" id="ZZz-Vu-Dpb"/>
                             <constraint firstItem="B8k-6W-p4s" firstAttribute="centerX" secondItem="tpw-AL-ECG" secondAttribute="centerX" id="cGZ-nO-aEc"/>
                             <constraint firstItem="dCb-D5-HKp" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8wW-Tw-KTw" secondAttribute="bottom" constant="20" id="dGZ-1f-xGq"/>
                             <constraint firstItem="8wW-Tw-KTw" firstAttribute="centerX" secondItem="dCb-D5-HKp" secondAttribute="centerX" id="gig-hw-RAg"/>
                             <constraint firstItem="8wW-Tw-KTw" firstAttribute="top" secondItem="tpw-AL-ECG" secondAttribute="bottom" constant="20" id="hVW-UX-xCU"/>
                             <constraint firstItem="tpw-AL-ECG" firstAttribute="top" secondItem="cue-Xf-bPp" secondAttribute="bottom" constant="20" id="i0O-cp-8y9"/>
                             <constraint firstItem="B8k-6W-p4s" firstAttribute="centerY" secondItem="tpw-AL-ECG" secondAttribute="centerY" id="lro-HM-DlW"/>
+                            <constraint firstItem="wNT-0E-XrP" firstAttribute="top" secondItem="8wW-Tw-KTw" secondAttribute="bottom" constant="30" id="n3Q-lt-wyC"/>
+                            <constraint firstItem="wNT-0E-XrP" firstAttribute="leading" secondItem="dCb-D5-HKp" secondAttribute="leading" constant="20" id="udE-9W-fc6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dCb-D5-HKp"/>
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="cue-Xf-bPp" id="XRC-yd-cxz"/>
                         <outlet property="postContentLabel" destination="8wW-Tw-KTw" id="s5Q-71-zu9"/>
+                        <outlet property="textLabel" destination="wNT-0E-XrP" id="osL-f9-dYt"/>
                         <outlet property="thumbnailImageView" destination="tpw-AL-ECG" id="WtS-VD-XqJ"/>
                     </connections>
                 </viewController>

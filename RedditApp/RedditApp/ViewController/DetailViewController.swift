@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var postContentLabel: UILabel!
+    @IBOutlet weak var textLabel: UILabel!
     
     var post: Post?
     var hasImage: Bool = true
@@ -24,8 +25,9 @@ class DetailViewController: UIViewController {
 
     
     func setupPostContent() {
-        authorLabel.text = post?.author
-        postContentLabel.text = post?.title
+        authorLabel.text = post?.author ?? ""
+        postContentLabel.text = post?.title ?? ""
+        textLabel.text = post?.selftext ?? ""
         
         if let post = post, let url = URL(string: post.thumbnail), UIApplication.shared.canOpenURL(url) {
             thumbnailImageView.load(url: url)

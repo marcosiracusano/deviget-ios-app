@@ -10,11 +10,11 @@ import Foundation
 
 class Service {
     
-    func getPosts(ServiceCompleted: @escaping ([Post]) -> Void) {
+    func getPosts(params: String?, ServiceCompleted: @escaping ([Post]) -> Void) {
         
         let dao = Dao()
         
-        dao.getPosts { (dto) in
+        dao.getPosts(params: params) { (dto) in
             
             let children = dto.data.children
             var posts: [Post] = []

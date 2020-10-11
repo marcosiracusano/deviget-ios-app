@@ -25,7 +25,7 @@ class FeedViewController: UIViewController, Dismissable {
 
         navigationItem.title = "Reddit Posts"
         setupTableView()
-        callToServices()
+        callToServices(nil)
     }
 
 
@@ -39,10 +39,10 @@ class FeedViewController: UIViewController, Dismissable {
         refreshControl.tintColor = .orange
     }
     
-    func callToServices() {
+    func callToServices(_ params: String?) {
         let service = Service()
         
-        service.getPosts { (posts) in
+        service.getPosts(params: params) { (posts) in
             self.postsArray = posts
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -56,7 +56,7 @@ class FeedViewController: UIViewController, Dismissable {
     }
     
     @objc private func refreshData(_ sender: Any) {
-        callToServices()
+        callToServices(nil)
         refreshControl.endRefreshing()
     }
     

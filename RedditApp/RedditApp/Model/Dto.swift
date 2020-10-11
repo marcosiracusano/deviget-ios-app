@@ -25,14 +25,16 @@ class Dto: Codable {
 class DtoData: Codable {
     let modhash: String
     let children: [DtoChild]
+    let after: String
     
     enum CodingKeys: String, CodingKey {
-        case modhash, children
+        case modhash, children, after
     }
 
-    init(modhash: String, children: [DtoChild]) {
+    init(modhash: String, children: [DtoChild], after: String) {
         self.modhash = modhash
         self.children = children
+        self.after = after
     }
 }
 
