@@ -44,17 +44,9 @@ class FeedTableViewCell: UITableViewCell {
  
     
     func setupView() {
-        backgroundColor = .black
-        dismissButtonView.backgroundColor = .black
-        
-        authorLabel.textColor = .white
-        entryDateLabel.textColor = .lightGray
-        titleLabel.textColor = .white
-        dismissButtonLabel.textColor = .white
-        commentsLabel.textColor = .orange
-        
+
         dismissButtonImageView.image = dismissButtonImageView.image?.withRenderingMode(.alwaysTemplate)
-        dismissButtonImageView.tintColor = .orange
+        dismissButtonImageView.tintColor = UIColor(red: 235/255, green: 85/255, blue: 40/255, alpha: 1)
         
         readIndicatorView.layer.cornerRadius = readIndicatorView.layer.frame.height / 2
     }

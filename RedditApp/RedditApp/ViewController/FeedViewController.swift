@@ -11,6 +11,9 @@ import UIKit
 class FeedViewController: UIViewController, Dismissable {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var redditLogoImageView: UIImageView!
+    
+    private let refreshControl = UIRefreshControl()
     
     var postsArray: [Post]?
     
@@ -28,6 +31,10 @@ class FeedViewController: UIViewController, Dismissable {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "FeedTableViewCell", bundle: Bundle.init(for: FeedTableViewCell.self)), forCellReuseIdentifier: "FeedTableViewCell")
+        tableView.tableFooterView = UIView()
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        refreshControl.tintColor = .orange
     }
     
     func callToServices() {
@@ -36,14 +43,21 @@ class FeedViewController: UIViewController, Dismissable {
         service.getPosts { (posts) in
             self.postsArray = posts
             DispatchQueue.main.async {
+                self.redditLogoImageView.isHidden = true
                 self.tableView.reloadData()
-                self.tableView.separatorColor = .lightGray
+                self.tableView.separatorStyle = .singleLine
+                self.redditLogoImageView.isHidden = true
             }
         }
     }
     
+    @objc private func refreshData(_ sender: Any) {
+        callToServices()
+        refreshControl.endRefreshing()
+    }
+    
     func dismissPost(_ post: Post) {
-        if let index = postsArray?.index(where: { $0 === post }) {
+        if let index = postsArray?.firstIndex(where: { $0 === post }) {
             
             let indexPath = IndexPath(row: index, section: 0)
 
@@ -56,13 +70,14 @@ class FeedViewController: UIViewController, Dismissable {
         var indexPaths: [IndexPath] = []
         
         for post in postsArray ?? [] {
-            if let index = postsArray?.index(where: { $0 === post }) {
+            if let index = postsArray?.firstIndex(where: { $0 === post }) {
                 indexPaths.append(IndexPath(row: index, section: 0))
             }
         }
 
         postsArray = []
-        tableView.separatorColor = .none
+        tableView.separatorStyle = .none
+        redditLogoImageView.isHidden = false
         tableView.deleteRows(at: indexPaths, with: .fade)
     }
 }
